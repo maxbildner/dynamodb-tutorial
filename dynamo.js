@@ -26,7 +26,7 @@ const getCharacters = async () => {
   // SCAN will read/look in the DB
   const characters = await dynamoClient.scan(params).promise();
 
-  console.log(characters);
+  // console.log(characters);
   //=> { Items: [], Count: 0, ScannedCount: 0 }
 
   return characters;

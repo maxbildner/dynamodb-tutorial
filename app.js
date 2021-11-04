@@ -25,6 +25,8 @@ app.get('/', (req, res) => {
 app.get('/characters', async (req, res) => {
   try {
     const characters = await getCharacters();
+
+    // sends JSON response back to client
     res.json(characters);
 
   } catch(err) {
@@ -97,9 +99,6 @@ app.delete('/characters/:id', async (req, res) => {
 
   // grab id from query string
   const { id } = req.params;
-
-  // ? why is this needed?
-  character.id = id;
   
   try {
     res.json(await deleteCharacter(id));
